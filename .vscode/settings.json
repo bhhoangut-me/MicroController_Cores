@@ -1,15 +1,19 @@
 {
     "python.languageServer": "Pylance",
-    "python.analysis.typeCheckingMode": "basic",
+    "python.defaultInterpreterPath": "C:\\Users\\Administrator\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+    "python.analysis.typeCheckingMode": "off",
     "python.analysis.diagnosticSeverityOverrides": {
-        "reportMissingModuleSource": "none"
+        "reportMissingModuleSource": "none",
+        "reportMissingImports": "none",
+        "reportUndefinedVariable": "none"
     },
     "python.terminal.activateEnvironment": false,
+    "pyrefly.enabled": false,
     "micropico.openOnStart": true,
     "python.analysis.typeshedPaths": [
-        "~/.micropico-stubs/included"
+        "${workspaceFolder}/.micropico-stubs"
     ],
     "python.analysis.extraPaths": [
-        "~/.micropico-stubs/included"
+        "${workspaceFolder}/.micropico-stubs"
     ]
 }

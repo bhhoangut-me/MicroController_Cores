@@ -1,0 +1,5 @@
+# Pyrefly config cho MicroPython project
+# Tat bao loi missing-import vì machine, utime, network... chi co tren Pico
+
+[errors]
+missing-import = false

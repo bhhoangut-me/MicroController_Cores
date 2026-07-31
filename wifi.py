@@ -1,6 +1,7 @@
 import config_wifi
 import network
 import socket
+import utime
 class WIFI:
     def __init__(self,ssid,passwd):
         self._ssid = ssid
@@ -8,15 +9,14 @@ class WIFI:
         self._wifi=network.WLAN(network.AP_IF)
         self._socket= None
         self._client_sock = None
-        # KHONG config o day - phai active truoc moi config duoc
+       
     def connect(self):
         # Buoc 1: Bat AP len truoc
         self._wifi.active(1)
-        import utime
         utime.sleep_ms(200)  # Cho AP on dinh
         # Buoc 2: Config SSID/passwd SAU KHI da active
         self._wifi.config(essid=self._ssid, password=self._passwd)
-        utime.sleep_ms(500)  # Cho SSID broadcast on dinh
+        utime.sleep_ms(500)  
         self._ip=self._wifi.ifconfig()
         print(f"[WIFI]  AP bat len | SSID='{self._ssid}' | IP={self._ip[0]} | Subnet={self._ip[1]}")
         print(f"[WIFI]  AuthMode=WPA2 | Channel=6")
